@@ -1,3 +1,12 @@
+packer {
+  required_plugins {
+    arm-image = {
+      version = "v0.2.6"
+      source  = "github.com/dawidd6/arm-image"
+    }
+  }
+}
+
 source "arm-image" "ubuntu" {
   iso_url         = "http://cdimage.ubuntu.com/releases/20.04/release/ubuntu-20.04.4-preinstalled-server-armhf+raspi.img.xz"
   iso_checksum    = "3b1704e8e4ff8e01dd89b9dd6adf9b99b48b2a7530d6f7676ce8c37772ff4178"
