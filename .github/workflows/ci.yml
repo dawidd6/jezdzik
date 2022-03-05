@@ -16,4 +16,4 @@ jobs:
         run: make tools
 
       - name: Build image
-        run: make image
+        run: sudo make image

@@ -5,7 +5,7 @@ tools:
 	test -x $(GOBIN)/packer || go install github.com/hashicorp/packer@v1.7.6
 
 image:
-	sudo env "PATH=$(PATH)" packer build template.pkr.hcl
+	packer build template.pkr.hcl
 
 flash:
-	sudo env "PATH=$(PATH)" flasher
+	flasher
