@@ -1,0 +1,5 @@
+- name: Reset ubuntu user password expiration
+  user:
+    name: ubuntu
+    password_expire_min: 0
+    password_expire_max: 99999

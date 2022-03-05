@@ -1,0 +1,5 @@
+- name: Remove packages
+  apt:
+    state: absent
+    name:
+      - snapd

@@ -4,3 +4,5 @@
   roles:
     - enable_ssh
     - set_nameserver
+    - reset_expiration
+    - remove_packages
