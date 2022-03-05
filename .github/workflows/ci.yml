@@ -28,4 +28,4 @@ jobs:
             ${{ runner.os }}-go-
 
       - name: Build image
-        run: sudo make image
+        run: make image
