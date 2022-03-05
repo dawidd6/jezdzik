@@ -11,8 +11,8 @@ source "arm-image" "ubuntu" {
   iso_url         = "http://cdimage.ubuntu.com/releases/20.04/release/ubuntu-20.04.4-preinstalled-server-armhf+raspi.img.xz"
   iso_checksum    = "3b1704e8e4ff8e01dd89b9dd6adf9b99b48b2a7530d6f7676ce8c37772ff4178"
   output_filename = "ubuntu-20.04.img"
-  # Source image is 1.7GB, so make target image 2.5GB
-  target_image_size = 2684354560
+  # 4GB
+  target_image_size = 4294967296
 }
 
 build {
