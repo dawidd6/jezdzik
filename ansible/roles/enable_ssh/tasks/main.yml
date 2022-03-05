@@ -1,0 +1,4 @@
+- name: Enable ssh on boot
+  file:
+    path: /boot/ssh
+    state: touch
