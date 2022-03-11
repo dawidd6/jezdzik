@@ -1,0 +1,4 @@
+- name: Set machine model for flash-kernel
+  template:
+    src: machine.j2
+    dest: /etc/flash-kernel/machine

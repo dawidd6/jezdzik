@@ -1,0 +1,2 @@
+- name: Generate SSH host keys
+  shell: ssh-keygen -A

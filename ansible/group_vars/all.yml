@@ -1,0 +1,9 @@
+# THIS IS AN EXAMPLE FILE
+
+wifi_ssid: OpenWrt
+wifi_password: abc1234567890
+
+hostname: fancy_rc_vehicle
+root_password: 0987654321xyz
+dns_ip: 1.1.1.1
+pi_model: Raspberry Pi 2 Model B

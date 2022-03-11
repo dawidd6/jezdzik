@@ -1,0 +1,10 @@
+network:
+  version: 2
+  renderer: networkd
+  wifis:
+    wlan0:
+      optional: true
+      access-points:
+        "{{ wifi_ssid }}":
+          password: "{{ wifi_password }}"
+      dhcp4: yes

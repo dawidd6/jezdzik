@@ -1,8 +1,32 @@
-- name: Provision image
-  hosts: default
+- hosts: localhost
+  gather_facts: false
+  tags: [always]
+  tasks:
+    - name: Add remote host
+      add_host:
+        name: default
+        ansible_host: "{{ hostname }}"
+        ansible_user: root
+        ansible_ssh_pass: "{{ root_password }}"
+      when: packer is not defined
+
+- hosts: default
   become: true
+  gather_facts: false
   roles:
-    - enable_ssh
-    - set_nameserver
-    - reset_expiration
-    - remove_packages
+    - role: set_hostname
+      tags: [hostname]
+    - role: set_nameserver
+      tags: [nameserver]
+    - role: set_root_password
+      tags: [root]
+    - role: configure_sshd
+      tags: [sshd]
+    - role: configure_networks
+      tags: [networks]
+    - role: configure_flash_kernel
+      tags: [flash-kernel]
+    - role: install_packages
+      tags: [packages]
+    - role: purge_packages
+      tags: [packages]

@@ -1,0 +1,22 @@
+- name: Use old behavior of interfaces naming
+  block:
+    - name: Read cmdline.txt
+      slurp:
+        path: /boot/firmware/cmdline.txt
+      register: cmdline
+
+    - name: Write cmdline.txt
+      copy:
+        content: "{{ 'net.ifnames=0 ' + (cmdline.content | b64decode | replace('net.ifnames=0 ', '')) }}"
+        dest: /boot/firmware/cmdline.txt
+
+- name: Copy netplan configs
+  template:
+    src: "{{ item }}.j2"
+    dest: "/etc/netplan/{{ item }}"
+  notify:
+    - Generate netplan configs
+    - Apply netplan configs
+  with_items:
+    - wired.yaml
+    - wireless.yaml

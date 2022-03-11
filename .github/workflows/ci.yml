@@ -27,5 +27,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-go-
 
+      # TODO: cache packer
+
+      - name: Initialize packer
+        run: sudo --preserve-env=PATH packer init template.pkr.hcl
+
       - name: Build image
-        run: make image
+        run: sudo --preserve-env=PATH packer build template.pkr.hcl

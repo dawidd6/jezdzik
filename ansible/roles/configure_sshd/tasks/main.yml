@@ -1,0 +1,24 @@
+- name: Enable SSH on boot
+  file:
+    path: /boot/ssh
+    state: touch
+  notify:
+    - Generate SSH host keys
+
+- name: Permit SSH root login
+  lineinfile:
+    path: /etc/ssh/sshd_config
+    regexp: "^PermitRootLogin"
+    line: "PermitRootLogin yes"
+    state: present
+  notify:
+    - Generate SSH host keys
+
+- name: Allow SSH password authentication
+  lineinfile:
+    path: /etc/ssh/sshd_config
+    regexp: "^PasswordAuthentication"
+    line: "PasswordAuthentication yes"
+    state: present
+  notify:
+    - Generate SSH host keys

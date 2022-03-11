@@ -1,0 +1,8 @@
+- name: Install additional packages
+  apt:
+    state: present
+    update_cache: true
+    name:
+      - linux-modules-extra-raspi # for r8188eu driver
+      - wireless-tools
+      - net-tools

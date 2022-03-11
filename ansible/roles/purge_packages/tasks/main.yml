@@ -1,0 +1,9 @@
+- name: Remove unneeded packages
+  apt:
+    state: absent
+    autoremove: true
+    purge: true
+    name:
+      - unattended-upgrades
+      - cloud-init
+      - snapd
