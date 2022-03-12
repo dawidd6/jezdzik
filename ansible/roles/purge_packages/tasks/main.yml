@@ -5,5 +5,10 @@
     purge: true
     name:
       - unattended-upgrades
+      - networkd-dispatcher
+      - multipath-tools
       - cloud-init
+      - modemmanager
+      - packagekit
+      - rsyslog
       - snapd
