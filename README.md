@@ -1,6 +1,13 @@
-# robot
+# Jeździk
 
 This is a repository holding all necessary code, scripts, etc for my remote controlled vehicle.
+
+## Ingredients
+
+- Raspberry Pi 2 B
+- Netis WF2120 Wi-Fi Adapter
+- LEGO Excavator set
+- ...
 
 ## Getting started
 
