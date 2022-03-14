@@ -1,25 +1,42 @@
 # Jeździk
 
-This is a repository holding all necessary code, scripts, etc for my remote controlled vehicle.
+This is a repository holding all necessary code, scripts, etc for my remote controlled vehicle named "_Jeździk_" (by my GF).
 
 ## Ingredients
 
+### Hardware
+
+- LEGO 42006 "_Excavator_" set
+  - used for building the construction of vehicle
+- LEGO 8882 PF XL motor x2
+  - used for moving caterpillars of vehicle
+- LEGO 8881 PF battery box
+  - used for powering the motors
+- Powerbank 10000mAh
+  - used for powering the Raspberry Pi
 - Raspberry Pi 2 B
-- Netis WF2120 Wi-Fi Adapter
-- LEGO Excavator set
-- ...
+  - used for control of the vehicle
+- Wi-Fi adapter
+  - used for connecting server with client
+- L293D motor driver
+  - used for driving the motors
+- Solderless breadboard
+  - used for connecting electronics
+- Some female-male connecting cables
+  - used for connecting electronics
 
-## Getting started
+### Software
 
-1. Copy `group_vars/all.yml` file to `host_vars/default.yml` in `ansible` directory and fill it with appropriate values.
-1. Build the image with packer, execute as **root**:
-
-    ```
-    packer init template.pkr.hcl
-    packer build template.pkr.hcl
-    ```
-
-1. Flash built image onto SD card and plug it in to Raspberry Pi and power on.
+- Ubuntu
+  - operating system for Raspberry Pi
+- Packer
+  - builder of operating system image
+- Ansible
+  - provisioner of operating system image
+- Go
+  - server code
+- Flutter
+  - client code
 
 ## GPIO
 
