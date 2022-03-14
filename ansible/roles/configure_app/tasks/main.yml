@@ -1,0 +1,20 @@
+- name: Copy app config
+  copy:
+    content: "{{ config | to_nice_yaml }}"
+    dest: /etc/jezdzikd.yml
+
+- name: Copy app binary
+  copy:
+    src: jezdzikd
+    dest: /bin/jezdzikd
+
+- name: Copy app service
+  copy:
+    src: jezdzikd.service
+    dest: /etc/systemd/system/jezdzikd.service
+
+- name: Enable app service
+  file:
+    state: link
+    src: /etc/systemd/system/jezdzikd.service
+    dest: /etc/systemd/system/default.target.wants/docker.service
