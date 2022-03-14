@@ -1,12 +1,12 @@
 # Jeździk
 
-This is a repository holding all necessary code, scripts, etc for my remote controlled vehicle named "_Jeździk_" (by my GF).
+This is a repository holding all necessary code, scripts, etc for my remote controlled vehicle named _"Jeździk"_ (by my GF).
 
 ## Ingredients
 
 ### Hardware
 
-- LEGO 42006 "_Excavator_" set
+- LEGO 42006 _"Excavator"_ set
   - used for building the construction of vehicle
 - LEGO 8882 PF XL motor x2
   - used for moving caterpillars of vehicle
@@ -40,20 +40,18 @@ This is a repository holding all necessary code, scripts, etc for my remote cont
 
 ## GPIO
 
-### Right motor
+```yaml
+motors:
+  right:
+    enable_pin: 12
+    forward_pin: 17
+    backward_pin: 27
+  left:
+    enable_pin: 13
+    forward_pin: 24
+    backward_pin: 23
+```
 
-GPIO12 GPIO17 GPIO27 direction
-1      1      0      forward
-1      0      1      backward
-1      1      1      stop
-1      0      0      stop
-0      x      x      stop
+## Thanks
 
-### Left motor
-
-GPIO13 GPIO23 GPIO24 direction
-1      0      1      forward
-1      1      0      backward
-1      1      1      stop
-1      0      0      stop
-0      x      x      stop
+Credits for inspiration goes to author of [this article](https://www.raspberry-pi-geek.com/Archive/2014/06/Using-Legos-to-turn-a-Raspberry-Pi-into-a-mobile-device)
