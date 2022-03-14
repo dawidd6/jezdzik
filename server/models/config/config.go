@@ -4,9 +4,6 @@ import (
 	"github.com/dawidd6/jezdzik/server/models/motor"
 )
 
-type Motors struct {
-}
-
 type Config struct {
 	Motors struct {
 		Left  *motor.Motor `yaml:"left"`
