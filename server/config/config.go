@@ -1,7 +1,7 @@
 package config
 
 import (
-	"github.com/dawidd6/jezdzik/server/models/motor"
+	"github.com/dawidd6/jezdzik/server/motor"
 )
 
 type Config struct {

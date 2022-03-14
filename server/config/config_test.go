@@ -3,7 +3,7 @@ package config_test
 import (
 	"testing"
 
-	"github.com/dawidd6/jezdzik/server/models/config"
+	"github.com/dawidd6/jezdzik/server/config"
 	"github.com/stretchr/testify/assert"
 	"gopkg.in/yaml.v2"
 )

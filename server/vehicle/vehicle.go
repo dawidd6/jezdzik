@@ -1,8 +1,8 @@
 package vehicle
 
 import (
-	"github.com/dawidd6/jezdzik/server/models/config"
-	"github.com/dawidd6/jezdzik/server/models/motor"
+	"github.com/dawidd6/jezdzik/server/config"
+	"github.com/dawidd6/jezdzik/server/motor"
 	"github.com/stianeikeland/go-rpio"
 )
 
