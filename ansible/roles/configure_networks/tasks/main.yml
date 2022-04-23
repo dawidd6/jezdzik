@@ -16,7 +16,6 @@
     dest: "/etc/netplan/{{ item }}"
   notify:
     - Generate netplan configs
-    - Apply netplan configs
   with_items:
     - wired.yaml
     - wireless.yaml

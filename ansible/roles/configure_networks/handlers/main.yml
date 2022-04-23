@@ -1,5 +1,3 @@
 - name: Generate netplan configs
   shell: netplan generate
 
-- name: Apply netplan configs
-  shell: netplan apply
