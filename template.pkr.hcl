@@ -9,7 +9,7 @@ packer {
 
 source "arm-image" "ubuntu" {
   iso_url         = "https://cdimage.ubuntu.com/releases/20.04/release/ubuntu-20.04.5-preinstalled-server-armhf+raspi.img.xz"
-  iso_checksum    = "file:https://releases.ubuntu.com/20.04/SHA256SUMS"
+  iso_checksum    = "file:https://cdimage.ubuntu.com/releases/20.04/release/SHA256SUMS"
   output_filename = "ubuntu.img"
   # 4GB
   target_image_size = 4294967296
