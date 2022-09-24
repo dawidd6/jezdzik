@@ -1,8 +1,8 @@
 packer {
   required_plugins {
     arm-image = {
-      version = "v0.2.6"
-      source  = "github.com/dawidd6/arm-image"
+      version = ">= 0.2.6"
+      source  = "github.com/solo-io/arm-image"
     }
   }
 }
