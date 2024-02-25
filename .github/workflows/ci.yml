@@ -14,27 +14,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
-      - name: Set up Go
-        uses: actions/setup-go@v2
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@v9
         with:
-          go-version: "1.17"
+          extra-conf: |
+            extra-platforms = aarch64-linux
 
-      - name: Cache Go stuff
-        uses: actions/cache@v2
-        with:
-          path: |
-            ~/.cache/go-build
-            ~/go/pkg/mod
-          key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
-          restore-keys: |
-            ${{ runner.os }}-go-
+      - name: Cache store
+        uses: DeterminateSystems/magic-nix-cache-action@v3
 
-      # TODO: cache packer
+      - name: Install QEMU
+        run: sudo apt install -y qemu-user-static
 
-      - name: Initialize packer
-        run: sudo --preserve-env=PATH packer init template.pkr.hcl
-
-      - name: Build image
-        run: sudo --preserve-env=PATH packer build template.pkr.hcl
+      - name: Check flake
+        run: nix flake check

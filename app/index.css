@@ -1,0 +1,122 @@
+* {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+}
+
+@media (orientation: landscape) {
+  body {
+    flex-direction: row;
+  }
+  div.controller {
+    height: 80%;
+    width: auto;
+  }
+}
+
+@media (orientation: portrait) {
+  body {
+    flex-direction: column;
+  }
+  div.controller {
+    height: auto;
+    width: 80%;
+  }
+}
+
+p.statuser {
+  font-size: 200%;
+  text-align: center;
+}
+
+div.controller {
+  display: grid;
+  aspect-ratio: 1;
+}
+
+button.control {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(30, 30, 30);
+  border: 0;
+}
+
+button.control:active {
+  background: rgb(0, 0, 0);
+}
+
+img.triangle,
+img.circle {
+  grid-column-start: inherit;
+  grid-row-start: inherit;
+  width: 60%;
+  height: 60%;
+  background: rgb(240, 240, 240);
+}
+
+button.control#up > img.triangle {
+  clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+}
+
+button.control#left > img.triangle {
+  clip-path: polygon(100% 0%, 0% 50%, 100% 100%);
+}
+
+button.control#reset > img.circle {
+  clip-path: circle();
+}
+
+button.control#right > img.triangle {
+  clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
+}
+
+button.control#down > img.triangle {
+  clip-path: polygon(0% 0%, 50% 100%, 100% 0%);
+}
+
+button.control#up {
+  grid-column-start: 2;
+  grid-row-start: 1;
+  border-top-left-radius: 5%;
+  border-top-right-radius: 5%;
+}
+
+button.control#left {
+  grid-column-start: 1;
+  grid-row-start: 2;
+  border-top-left-radius: 5%;
+  border-bottom-left-radius: 5%;
+}
+
+button.control#reset {
+  grid-column-start: 2;
+  grid-row-start: 2;
+}
+
+button.control#right {
+  grid-column-start: 3;
+  grid-row-start: 2;
+  border-top-right-radius: 5%;
+  border-bottom-right-radius: 5%;
+}
+
+button.control#down {
+  grid-column-start: 2;
+  grid-row-start: 3;
+  border-bottom-left-radius: 5%;
+  border-bottom-right-radius: 5%;
+}

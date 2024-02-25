@@ -1,3 +1,0 @@
-- name: Generate netplan configs
-  shell: netplan generate
-

@@ -1,3 +1,3 @@
-packer_cache/
-*.img
-*.xz
+/.pre-commit-config.yaml
+/.direnv
+/result*

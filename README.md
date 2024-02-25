@@ -27,16 +27,18 @@ This is a repository holding all necessary code, scripts, etc for my remote cont
 
 ### Software
 
-- Ubuntu
+- Raspberry Pi OS
   - operating system for Raspberry Pi
 - Packer
   - builder of operating system image
 - Ansible
   - provisioner of operating system image
-- Go
-  - server code
-- Flutter
-  - client code
+- Nix
+  - dependency manager and command runner
+- NodeJS
+  - backend code
+- HTML/CSS/JS
+  - frontend code
 
 ## GPIO
 
